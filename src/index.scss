@@ -59,10 +59,20 @@ article {
   }
 }
 
-.flag__section img {
-  object-fit: cover;
+// .flag__section img {
+//   object-fit: cover;
+//   height: 150px;
+//   width: 100%;
+// }
+
+.flag__section {
   height: 150px;
+}
+
+.flag__section img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .details {

@@ -11,6 +11,13 @@ export const fetchAsyncCountryDetail = createAsyncThunk('countries/fetchAyncCoun
   return countryData.data;
 })
 
+
+export const fetchSearchedCountryDetail = createAsyncThunk('countries/etchSearchedCountryDetail', async(term) => {
+  const countryData = await axios.get(`https://restcountries.com/v3.1/name/${term}`);
+  return countryData.data;
+})
+
+
 const initialState = {
   countries: [],
   selectedCountry: []
@@ -28,7 +35,11 @@ const countriesSlice = createSlice({
     [fetchAsyncCountryDetail.fulfilled]: (state, {payload}) => {
       console.log('Fulfilled');
       return {...state, selectedCountry:payload}
-    }
+    },
+    [fetchSearchedCountryDetail.fulfilled]: (state, {payload}) => {
+      console.log('Fulfilled');
+      return {...state, countries:payload}
+    },
   }
 })
 

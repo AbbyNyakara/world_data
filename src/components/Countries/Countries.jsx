@@ -20,8 +20,8 @@ const Countries = () => {
       {
         countries.map((country) => {
           return (
-            <Link to={`/countries/${country.name.common}`}>
-              <article key={country.name.common}>
+            <Link to={`/countries/${country.name.common}`} key={country.name.common}>
+              <article>
                 <div className="flag__section">
                   <img src={country.flags.svg} alt="" />
                 </div>
